@@ -1,0 +1,47 @@
+PC		Machine Code 	 Assembly Code    		Instruction Result
+0x0		0x46000093	 	addi x1,x0,1120   		   x1=0x00000460
+0x4		0xF8800113	 	addi x2,x0,-120			   x2=0xFFFFFF88
+0x8		0xD00080D3	 	fcvt.s.w f1,x1    		   f1=0x448C0000
+0xc		0xD0010153	 	fcvt.s.w f2,x2    		   f2=0xC2F00000
+0x10	0x002081D3	 	fadd.s f3,f1,f2   		   f3=0x447a0000
+0x14	0x08208253	 	fsub.s f4,f1,f2   		   f4=0x449b0000
+0x18	0x102082D3	 	fmul.s f5,f1,f2   		   f5=0xc8034000
+0x1c	0xA020A353	 	feq.s x6,f1,f2    		   x6=0x00000000
+0x20	0xA02093D3	 	flt.s x7,f1,f2    		   x7=0x00000000
+0x24	0xA0208453	 	fle.s x8,f1,f2    		   x8=0x00000000
+0x28	0x282084D3	 	fmin.s f9,f1,f2   		   f9=0xC2F00000
+0x2c	0x28209553	 	fmax.s f10,f1,f2  		  f10=0x448C0000
+0x30	0xE00095D3	 	fclass.s x11,f1   		  x11=0x00000040
+0x34	0x20208653	 	fsgnj.s f12,f1,f2 		  f12=0xc48c0000 
+0x38	0x202096D3	 	fsgnjn.s f13,f1,f2		  f13=0x448c0000
+0x3c	0x2020A753	 	fsgnjx.s f14,f1,f2		  f14=0xc48c0000
+0x40	0xC00087D3	 	fcvt.w.s x15,f1   		  x15=0x00000460
+0x44    0xF0078853   	fmv.w.x f16,x15   		  f16=0x00000460
+0x48    0xE0080853	 	fmv.x.w x16,f16			  x16=0x00000460
+0x4c	0x00E02227	 	fsw f14,4(x0)     	   mem[4]=0xc48c0000
+0x50	0x00402787	 	flw f15,4(x0)     		  f15=0xc48c0000
+0x54	0x00000063	 	end:beq x0,x0,end 		  infinity loop
+/////////////////////////////////////////////////////////////////////
+	 Integer Reg File		  Floating.P Reg File
+	   x1=0x00000460              f1=0x448C0000
+	   x2=0xFFFFFF88              f2=0xC2F00000
+	   x6=0x00000000              f3=0x447a0000
+	   x7=0x00000000              f4=0x449b0000
+	   x8=0x00000000              f5=0xc8034000
+	  x11=0x00000040              f9=0xC2F00000
+	  x15=0x00000460             f10=0x448C0000
+	  x16=0x00000460             f12=0xc48c0000
+	                             f13=0x448c0000
+	                             f14=0xc48c0000
+								 f15=0xc48c0000
+	  	                         f16=0x00000460
+      	                         
+////////////////////////////////////////////////////////////////////////      	 
+      	 
+      	 
+      	 
+      	 
+      	 
+      	 
+      	 
+      	 
